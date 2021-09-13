@@ -1,0 +1,161 @@
+/* Importing fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montaga&family=Poppins:wght@400;600&display=swap');
+
+
+    body{
+        font-family: "Poppins";
+        background-image: url("../img/bg.png");
+        background-size: cover;
+        background-position: top;
+    }
+    .wrapper{
+        width: 90%;
+        padding: 5%;
+    }
+    .logo{
+        display: block;
+    }
+
+    .logo img{
+        width: 80%;
+        margin-left: 5%;
+    }
+
+    .page-header{
+        font-family: Poppins;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 600;
+        margin-top: 80px;
+        text-align: center;
+    }
+
+    .menu-list{
+        padding-left: 0;
+        width: 100%;
+        list-style-type: none;
+    }
+
+    .menu-list a{
+        display: block;
+        background: rgba(249, 189, 113, 0.1);
+        margin: 10px 0;
+        padding: 15px 30px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+    }
+
+    .menu-list li:hover{
+        cursor: pointer;
+    }
+
+    .menu-list a{
+        color: #000;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 20px;
+    }
+
+    .footer{
+        width: 100%;
+        display: flex;
+        margin-top: 15%;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+    }
+
+    .footer img{
+        width: 20px;
+        margin-right: 3%;
+    }
+
+    .footer a{
+        color: #000;
+        text-decoration: none;
+        font-size: 10px;
+    }
+
+    .footer-first{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-second{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search-bar{
+        background: rgba(249, 189, 113, 0.34);
+        border-radius: 111px;
+        padding: 10px 20px;
+        margin-top: 30px;
+        position: absolute;
+        top: 61px;
+        left: 10%;
+    }
+
+    .search-bar input{
+        width: 85%;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-size:  18px;
+    }
+
+    .search-bar i:hover{
+        cursor: pointer;
+    }
+
+    .meal-photo img{
+        margin: 25px 0;
+        width: 100%;
+    }
+
+    .meal-title{
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    .meal-list{
+        margin: 20px 0;
+        display: flex;
+        font-family: 'Montaga', serif;
+        font-size: 18px;
+    }
+
+    .ingridi{
+        margin-left: 60%;
+    }
+
+    .meal-nav{
+        display: flex;
+        margin: 8%x 0;
+    }
+
+    .meal-nav a{
+        text-decoration: none;
+    }
+
+    .nav-back{
+        background-color: #000;
+        color: #fff;
+        padding: 15px;
+    }
+
+    .nav-to-menu{
+        background-color: #000;
+        color: #fff;
+        padding: 10px 8%;
+        margin-left: 3%;
+    }
+
+    #searched-foods h4{
+        font-family: "Poppins";
+        font-weight: 400;
+        margin-left: 20px;
+    }

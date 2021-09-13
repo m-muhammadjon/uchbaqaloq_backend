@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Admin</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container" style="margin-top: 15px">
+    <div class="row">
+
+    <div class="list-group col-5">
+        <a href="{% url 'restaurant:dashboard' %}" class="list-group-item list-group-item-action {% if not category %}active{% endif %} ">
+           All
+        </a>
+        {% for c in categories %}
+        <a href="{% url 'restaurant:list_by_category' c.slug %}" class="list-group-item list-group-item-action {% if category == c %}active{% endif %}">
+           {{ c.name }}
+        </a>
+        {% endfor %}
+
+    </div>
+    <div class="list-group col-7">
+        {% for food in foods %}
+        <a href="{{ food.get_absolute_url_admin }}" class="list-group-item list-group-item-action">
+           {{ food.name }}
+        </a>
+        {% endfor %}
+
+    </div>
+    </div>
+</div>
+</body>
+</html>

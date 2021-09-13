@@ -1,0 +1,85 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredient | Form</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/ingredient.css' %}">
+</head>
+<body>
+<div class="container my-5">
+    <a href="{% url 'restaurant:dashboard' %}">Dashboard</a>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="col-lg-6">
+                    {% if food.image %}
+                    <img src="{{ food.image.url }}" class="w-75" alt="">
+                    {% endif %}
+                </div>
+                <div class="col-lg-6 my-5">
+                    <b>Category:</b> <span><a href="{% url 'restaurant:list_by_category' food.category.slug %}">{{ food.category.name }}</a></span>
+                    <h2 class="my-4">{{ food.name }}</h2>
+                </div>
+            </div>
+            <form action="" method="post"> {% csrf_token %}
+                <div class="row my-5">
+                    <div class="col-lg-6">
+                        <h4>Name: </h4>
+                        {% render_field form.name class="form-control" %}
+                    </div>
+
+                    <div class="col-lg-6">
+                        <h4>Weight: </h4>
+                        {% render_field form.weight class="form-control" %}
+                    </div>
+                    <div class="col-lg-12 my-5">
+                        <button class="btn btn-secondary w-100" type="submit">
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <h1 class="text-center">Ingredients</h1>
+            <div class="row my-3 mx-lg-5 px-lg-5 mx-2 px-2">
+                <div class="col-lg-6 col-sm-3">
+                    <ul class="ingri-list">
+                        {% for ingredient in food.ingredients.all reversed %}
+                        <li>
+                            {{ ingredient.name }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-sm-3">
+                    <ul class="ingri-list">
+                        {% for ingredient in food.ingredients.all reversed %}
+                        <li>
+                            {{ ingredient.weight }} <a href="{% url 'restaurant:delete' ingredient.id %}?next={{ request.path|urlencode }}" class="text-danger h6">x</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
