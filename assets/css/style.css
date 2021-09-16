@@ -19,6 +19,7 @@
     .logo img{
         width: 80%;
         margin-left: 5%;
+        position: absolute;
     }
 
     .page-header{
@@ -26,7 +27,7 @@
         font-size: 40px;
         font-style: normal;
         font-weight: 600;
-        margin-top: 80px;
+        margin-top: 50px;
         text-align: center;
     }
 
@@ -90,13 +91,12 @@
     }
 
     .search-bar{
+        margin: 30px 0px;
+        width: 90%;
         background: rgba(249, 189, 113, 0.34);
         border-radius: 111px;
         padding: 10px 20px;
-        margin-top: 30px;
-        position: absolute;
-        top: 61px;
-        left: 10%;
+        margin-top: 25%;
     }
 
     .search-bar input{
@@ -157,4 +157,5 @@
     #searched-foods h4{
         font-family: "Poppins";
         font-weight: 400;
+        margin-left: 20px;
     }

@@ -5,12 +5,12 @@ let pageHeader = document.querySelector(".page-header");
 
 searchInput.addEventListener("focus", function (){
     logo.style.display = "none";
-    searchBar.style.top = "-20px";
-    pageHeader.style.marginTop = "40px"
+    searchBar.style.marginTop = "0%";
+    pageHeader.style.marginTop = "40px";
 })
 
 searchInput.addEventListener("focusout", function (){
     logo.style.display = "block";
-    searchBar.style.top = "61px";
+    searchBar.style.marginTop = "25%";
     pageHeader.style.marginTop = "80px";
 })
