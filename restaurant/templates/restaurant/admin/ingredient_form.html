@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingredient | Form</title>
+    <link rel="icon" type="image/png" href="{% static 'img/uchbaqaloq_logo.png' %}">
+
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -63,7 +65,9 @@
                     <ul class="ingri-list">
                         {% for ingredient in food.ingredients.all reversed %}
                         <li>
-                            {{ ingredient.weight }} <a href="{% url 'restaurant:delete' ingredient.id %}?next={{ request.path|urlencode }}" class="text-danger h6">x</a>
+                            {{ ingredient.weight }} <a
+                                href="{% url 'restaurant:delete' ingredient.id %}?next={{ request.path|urlencode }}"
+                                class="text-danger h6">x</a>
                         </li>
                         {% endfor %}
                     </ul>
